@@ -1,11 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formularios</title>
 </head>
+
 <body>
-    
+    <header>
+        <h1>Mi blog personal</h1>
+        <hr>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Sobre mi</a></li>
+                <li><a href="#">Artículos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <hr>
+    </header>
+    <main>
+        <section id="contacto">
+            <h2>Formulario de contacto</h2>
+            <p>Rellena el formulario para enviarme tus comentarios o preguntas.</p>
+            <!-- Formulario de contacto -->
+            <form action="myscript.php">
+                <!-- fieldset funciona para agrupar los elementos de un formulario -->
+                <fieldset>
+                    <!-- legend funciona para darle título a la seccion del formulario -->
+                    <legend>Datos del usuario</legend>
+                    <!-- label es una etiqueta que nos isrve para asociar un texto descriptivo a un elemento de entrada 
+                     El atributo for ayuda a vincularlo con un elemento de formulario en especifico ya que el atributo for contiene el id del campo de entrada con el cual se asocia 
+                     input es una etiqueta que nos sirve para agregar al formulario la entrada
+                     El atributo place holder sirve para poner un fantasma de relleno
+                     El atributo required sirve para poner un requisito obligatorio
+                     -->
+                    <label for="nombre">Nombre: </label>
+                    <br>
+                    <input type="text" id="nombre" placeholder="Ingresa tu nombre" required>
+                    <br>
+                    <br>
+
+                    <label for="email">Correo electrónico: </label>
+                    <br>
+                    <input type="email" id="email" placeholder="ejemplo@correo.com" required>
+                    <br>
+                    <br>
+                </fieldset>
+                <fieldset>
+                    <legend>Descripción del asunto</legend>
+                    <label for="asunto">Asunto:</label>
+                    <select id="asunto">
+                        <option>Consulta</option>
+                        <option>Sugerencia</option>
+                        <option>Queja</option>
+                        <option>Otro</option>
+                    </select>
+                    <br>
+                    <br>
+
+                    <label for="mensaje">Mensaje:</label>
+                    <br>
+                    <textarea id="mensaje" placeholder="Escribe tu mensaje aquí..." required rows="5">
+                     </textarea>
+                </fieldset>
+                <!-- fieldset nos sirve para agrupar elementos relacionados de un formulario. Facilita la comprensión de navegación en el formulario, especialmente para los usuarios de lectores de pantalla
+                    legend nos ayuda a proporcionar un título a mi grupo de información almacenado en el fieldset 
+                    Cada radio posee el mismo name para que solo nos deje seleccionar una opción -->
+                <fieldset>
+                    <legend>Género</legend>
+
+                    <input type="radio" name="genero" id="genero-masculino">
+                    <label for="genero-masculino">Masculino</label>
+                    <br>
+
+                    <input type="radio" name="genero" id="genero-femenino">
+                    <label for="genero-femenino">Femenino</label>
+                    <br>
+
+                    <input type="radio" name="genero" id="genero-otro">
+                    <label for="genero-otro">Otro</label>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Intereses</legend>
+
+                    <input type="checkbox" name="cocinar" id="intereses-cocinar">
+                    <label for="intereses-cocinar">Comer</label>
+                    <br>
+
+                    <input type="checkbox" name="meditar" id="intereses-meditar">
+                    <label for="intereses-meditar">Leer</label>
+                    <br>
+
+                    <input type="checkbox" name="escribir" id="intereses-escribir">
+                    <label for="intereses-escribir">Escribir</label>
+                
+                </fieldset>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
 </body>
+
 </html>
